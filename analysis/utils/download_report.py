@@ -26,18 +26,17 @@ def download_json(from_unix: int, to_unix: int):
     try:
         resp = requests.get(READ_API_URL, params=payload)
         data = resp.json()
+        if 'error' in data:
+            # Empty collection
+            # print(data['error'])
+            return []
+        else:
+            return data
     except JSONDecodeError:
         print('JSONDecodeError: ',resp.url)
     except UnboundLocalError as e:
         print('UnboundLocalError: ',str(e))
-
-    print("Downloading from URL:{}".format(resp.url))
-    if 'error' in data:
-        # Empty collection
-        print(data['error'])
-        return []
-    else:
-        return data
+    return []
 
 
 def download_data(from_time, to_time, period_minutes):
