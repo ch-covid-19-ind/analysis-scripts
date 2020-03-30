@@ -93,14 +93,24 @@ To run export to csv:
 python analysis/scripts/06_export_csv.py
 ```
 
+To publish the output_datasets to the github repo:
+
+Note: it automatically pushes. The dataset repo should be configured in the .env file.
+
+```bash
+python analysis/scripts/publish_output_to_github.sh
+```
+
 ## For backups
 
 ### Create a backup of NOW
+
 ```bash
 sh docker_db_backup.sh
 ```
 
 ### Relaod a backup
+
 ```bash
 sh docker_db_restore.sh <relative path to the backup>
 # example
