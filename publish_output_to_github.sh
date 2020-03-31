@@ -26,4 +26,5 @@ echo $now > last_update.txt
 #push to github
 git add .
 git commit -m "update $now"
-git push
+git push origin
+git push push-upstream

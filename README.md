@@ -8,7 +8,6 @@ We recomand that you activate a virtual environment before.
 ```bash
 sh python_install.sh
 ```
-
 If you run from analysis-script folder, you might want to set up the PYTHONPATH as below:
 `export PYTHONPATH=$PWD/analysis:$PYTHONPATH`
 
@@ -98,7 +97,19 @@ To publish the output_datasets to the github repo:
 Note: it automatically pushes. The dataset repo should be configured in the .env file.
 
 ```bash
-python analysis/scripts/publish_output_to_github.sh
+sh publish_output_to_github.sh
+```
+
+##### Start Docker Containers
+
+```bash
+sh docker_start.sh
+```
+
+##### Stop Docker Containers
+
+```bash
+sh docker_stop.sh
 ```
 
 ## For backups
@@ -110,7 +121,6 @@ sh docker_db_backup.sh
 ```
 
 ### Relaod a backup
-
 ```bash
 sh docker_db_restore.sh <relative path to the backup>
 # example
